@@ -68,12 +68,11 @@ $(function(){
 			$(window).scrollTop(scrollPosition);
 		});
 	});
-	
 	// bp back to top
 	// scroll distance to display bp
 	var amountScrolled = 350;
-	$('#content').scroll(function() {
-		if ( $('#content').scrollTop() > amountScrolled ) {
+	$(window).scroll(function() {
+		if ( $(window).scrollTop() > amountScrolled ) {
 			$('a.back-to-top').fadeIn('slow');
 		} else {
 			$('a.back-to-top').fadeOut('slow');
@@ -81,9 +80,8 @@ $(function(){
 	});
 	// bp action to up
 	$('a.back-to-top').click(function() {
-	$('#content').animate({
-		scrollTop: 0
-	}, 700);
-	return false;
-});
+		$(window).animate({
+			scrollTop: 0
+		}, 700);
+	});
 });
